@@ -10,7 +10,8 @@
       "**/.*_history"
     ],
     "exclude": [
-      "projects/.keep"
+      "projects/.keep",
+      "skills/*"
     ]
   },
   "config_scrub": {
@@ -38,7 +39,7 @@
     "replacements": [
       {
         "search": "/Users/evan/",
-        "replace": "/Users/evan/"
+        "replace": "/Users/${USER}/"
       }
     ]
   }

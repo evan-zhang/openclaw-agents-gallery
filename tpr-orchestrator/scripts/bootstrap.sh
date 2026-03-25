@@ -24,7 +24,17 @@ find . -type f \( -name "*.md" -o -name "*.json" -o -name "*.sh" \) -not -path "
 # Also handle variations like /Users/$USER/
 find . -type f \( -name "*.md" -o -name "*.json" -o -name "*.sh" \) -not -path "./scripts/bootstrap.sh" -exec sed -i '' "s|/Users/\$USER/|/Users/$CURRENT_USER/|g" {} + 2>/dev/null
 
-# 3. Handle openclaw.json specifically if needed
+# 3. Skill Scanning
+echo "Scanning for local skills in workspace..."
+if [ -d "skills" ]; then
+    SKILLS_COUNT=$(ls -d skills/*/ 2>/dev/null | wc -l)
+    echo "Found $SKILLS_COUNT local skills. These are now available to you."
+    ls -d skills/*/ 2>/dev/null | xargs -n 1 basename
+else
+    echo "Warning: No 'skills/' directory found in this workspace. You might be a shell!"
+fi
+
+# 4. Handle openclaw.json specifically if needed
 # (Optional) We could use JQ to update specific config fields if we know the schema.
 
 # 4. Report status
