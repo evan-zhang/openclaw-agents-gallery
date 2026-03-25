@@ -1,0 +1,45 @@
+{
+  "physical_scrub": {
+    "directories": [
+      "projects/*",
+      "memory/202*",
+      "state/sessions/*"
+    ],
+    "files": [
+      "MEMORY.md",
+      "**/.*_history"
+    ],
+    "exclude": [
+      "projects/.keep"
+    ]
+  },
+  "config_scrub": {
+    "files": [
+      "openclaw.json",
+      "config/config.json"
+    ],
+    "mask_keys": [
+      "api_key",
+      "token",
+      "password",
+      "secret",
+      "private_key",
+      "auth_token",
+      "credentials"
+    ]
+  },
+  "reset_files": [
+    {
+      "path": "AGENTS.md",
+      "template": "skills/templates/AGENTS.default.md"
+    }
+  ],
+  "placeholder_scrub": {
+    "replacements": [
+      {
+        "search": "/Users/evan/",
+        "replace": "/Users/evan/"
+      }
+    ]
+  }
+}
