@@ -40,6 +40,20 @@ Restart your Gateway. Your new Agent will "wake up" and see a `BOOTSTRAP.md` fil
 
 ---
 
+## 🤖 AI 一键安装指令 (One-Click AI Installation)
+
+如果你正在与一个拥有 `exec` 和 `gateway` 权限的 OpenClaw Agent 聊天，你可以直接将以下指令发给它，它会自动帮你完成“入驻”：
+
+> **指令：** "请帮我从这个画廊安装 `tpr-orchestrator` Agent：`https://github.com/evan-zhang/openclaw-agents-gallery`。
+> 
+> 1. 请在 `~/.openclaw/` 下为它创建一个新的 Workspace（建议路径：`~/.openclaw/workspace-tpr-cloned`）。
+> 2. 使用 `exec` 将仓库克隆过去。
+> 3. 读取该目录下的 `BOOTSTRAP.md` 并执行 `scripts/bootstrap.sh`。
+> 4. 使用 `gateway config.patch` 将新 Agent 注册到当前的 Gateway 中（ID 建议为 `tpr-assistant`）。
+> 5. 在执行最后的配置修改前，请先向我确认路径和 ID。"
+
+---
+
 ## 🛡️ Privacy & Security
 All agents in this gallery have been processed using the **TPR Scrub Tool**.
 - ✅ **No Private Data**: All `memory/` and `projects/` history have been physically deleted.
